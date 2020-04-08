@@ -16,6 +16,21 @@
 // rotate 1 steps to the right: [99, -1, -100, 3]
 // rotate 2 steps to the right: [3, 99, -1, -100]
 
+/*
+* LEARNED SOMETHING NEW - k %= 'bigger-number'  returns back k
+ex:      3%2  is remainder 1
+         3%7  is remainder 3 because 7 does not fit into 3
+
+
+
+
+*/
+
+function rotateArray(arr, k){
+     
+}
+
+
 
 var rotate = function (nums, k) {
      let stack = []

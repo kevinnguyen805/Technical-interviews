@@ -11,6 +11,22 @@
 // ]
 
 
+// * TAKEAWAYS: 
+     // * this problem uses the stack to create combinations of parentheses 
+     // * similar to DFS recursion - will keep using left (  until exhausted, then go back and use right )  
+          // * ex. we have 3 items on the stack for n = 3
+          // * ( 
+          // * ((
+          // * (((
+               // * which will proceed to right and THEN BACK TO LEFT!
+
+
+// 1. choice - place a '(' or ')'
+// 2. constraints - we cannot close until we open. My count of left opens matter
+// 3. goal - n*2 placements where n is how many opening brackets we have (also the parameter we pass in)
+
+
+
 function generateParentheses(n){
      // method - to keep count of left and right () during recursion stack
 
