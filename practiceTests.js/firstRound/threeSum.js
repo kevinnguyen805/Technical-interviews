@@ -14,7 +14,59 @@
 //      [-1, -1, 2]
 // ]
 
+// 3Sum
+// https://leetcode.com/problems/3sum/
+// Blog:
+// https://medium.com/@paulrohan/solving-the-classic-two-sum-and-three-sum-problem-in-javascript-7d5d1d47db03
 
+
+var threeSum = function (nums) {
+     // MISTAKE - sort the array so you iterate through negatives to 0
+     nums = nums.sort((a, b) => a - b)
+
+     let results = []
+
+     let hash = {}
+
+     // three pointers - anchor + one over + one at the end
+     for (let i = 0; i < nums.length - 2; i++) {
+          if (nums[i] > 0) {
+               break
+          }
+          if (i > 0 && nums[i] === nums[i - 1]) {
+               continue
+          }
+          let j = i + 1
+          let k = nums.length - 1
+
+          while (j < k) {
+               let sum = nums[i] + nums[j] + nums[k]
+               if (sum > 0) {
+                    k--
+               } else if (sum < 0) {
+                    j++
+               } else {
+                    results.push([nums[i], nums[j], nums[k]])
+
+                    // duplicates 
+                    while (nums[j] === nums[j + 1]) {
+                         j++
+                    }
+                    while (nums[k] === nums[k - 1]) {
+                         k--
+                    }
+                    // traverse
+                    j++
+                    k--
+               }
+          }
+     }
+
+     return results
+};
+
+
+// * INITIAL ATTEMPT WITH NOTES 
 var threeSum = function (nums) {
      // treat it like a two sum problem 
      let result = []

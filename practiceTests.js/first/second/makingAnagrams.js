@@ -1,5 +1,4 @@
 function makeAnagrams(a, b) {
-     // // Write your code here
      let hashA = {}
      let hash = {}
 
