@@ -47,7 +47,104 @@
 // Since the character "a" does not repeat, it is not compressed. "bbbbbbbbbbbb" is replaced by "b12".
 // Notice each digit has it's own entry in the array.
 
+// * Trial 4 - MAKES SENSE!!
+var compress = function(chars) {
+    // .splice() removes the items and returns the removed items
+    // .slice() doesn't remove the array, but returns selected items in a NEW ARRAY
+    let startingIndex = 0
+    let length = 1
+    
+    for(let i = 0; i<chars.length; i++){
+        if(chars[i] === chars[i+1]){
+            length++
+        } else {
+            if(length > 1){
+                let counter = length.toString().split('')
+                
+                // MISTAKE - startingIndex + 1 NOT i + 1 (because i is ahead )
+                chars.splice(startingIndex+1, length-1, ...counter)
+                
+                // update i in case the array shifted around 
+                    // the number of reoccurrances minus the number's length minus 1 (to account for the letter you are saving )
+                i -= (length - counter.length - 1)
+                
+                // now that i is updated, update the starting point 
+                startingIndex = i+1
+                length = 1
+                
+            } else {
+             startingIndex++   
+            }
+        }
+    }
+    return chars.length 
+};
 
+
+// * Trial 3 - Notes included 
+var compress = function(chars) {
+    // .splice() removes the items and returns the removed items
+    // .slice() doesn't remove the array, but returns selected items in a NEW ARRAY
+    let length = 1
+    let startingIndex = 0
+    
+    for(let i = 0; i<chars.length; i++){
+        if(chars[i] === chars[i+1]){
+            // increment the 'length' of repeating character if the one ahead is the same 
+            length++
+        } else {
+            // we hit this once we hit first non-repeating character
+            if(length >1){
+                // if length is greater than 1.. replace the characters and add digits
+                let count = length.toString().split('')
+                
+                // .splice(starting at one letter ahead, delete # of repeats not including initial character, ...add array containing occurance)
+                chars.splice(startingIndex + 1, length-1, ...count)
+                
+                console.log('after splice', chars)
+                // move starting index 
+                    // length of repeating characters minus length of number (representing length) 
+                startingIndex = (i+1) - (length - count.length-1)
+                
+    
+                i -= (length - count.length-1)
+                
+                // restart length 
+                length = 1
+            } else {
+                startingIndex++
+            }
+        }
+        
+        
+        
+    }
+    
+    
+};
+
+
+
+//  let length = 1
+//    let startingIndex = 0
+   
+//    for(let i = 0; i<chars.length; i++){
+//        if(chars[i] === chars[i+1]){
+//            length++
+//        } else {
+//             if(length > 1){
+//                 let arr = length.toString().split('')
+//                 chars.splice(startingIndex+1, length-1, ...arr)
+//                 startingIndex = (i+1) - (length - arr.length - 1)
+//                 i -= (length - arr.length - 1)
+//                 length = 1
+//             } else {
+//                 startingIndex++
+//             } 
+//        }
+//    }
+    
+//     return chars.length
 
 
 //* trial 2 - optimized answer */
