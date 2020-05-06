@@ -88,3 +88,9 @@ WHERE LENGTH(SupplierName) > 20
 
 *TODO* DELETE!!
 DELETE FROM Customers 
+
+DELETE Product
+WHERE Condition 
+
+DELETE Customer 
+WHERE Id = 21
