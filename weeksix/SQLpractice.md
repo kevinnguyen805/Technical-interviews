@@ -57,7 +57,7 @@ VALUES ('The Shire', 'Bilbo Baggins', '1 HobbitHole', 'Bag End', '111', 'Middle 
 
 
 *TODO* update Bilbo Baggins record so that the postal code changes to "11122".
-- Note: To update, syntax:
+- Note: To *UPDATE*, syntax:
      UPDATE tableName 
      SET column1 = value1, column2 = value2
      WHERE (condition for which record is being updated)
@@ -85,3 +85,6 @@ SELECT *
 FROM Suppliers
 WHERE LENGTH(SupplierName) > 20 
 
+
+*TODO* DELETE!!
+DELETE FROM Customers 
