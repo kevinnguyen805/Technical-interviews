@@ -70,3 +70,18 @@ WHERE CustomerID = 95
 SELECT *
 FROM Customers
 WHERE CustomerID > 90
+
+
+*TODO* Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted. Should be 69.
+- Note: *To quantify a group of records - use COUNT*
+     - If you want to know the distinct count of records - use (DISTINCT column-name)
+SELECT COUNT (DISTINCT City)
+FROM Customers
+
+*TODO* Find all suppliers who have names longer than 20 characters. Returns 11 records.
+- Note: *You don't put strings around numbers*
+     - You can find the length of a record by using *LENGTH()*
+SELECT * 
+FROM Suppliers
+WHERE LENGTH(SupplierName) > 20 
+
