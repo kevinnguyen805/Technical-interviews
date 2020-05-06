@@ -57,7 +57,7 @@ VALUES ('The Shire', 'Bilbo Baggins', '1 HobbitHole', 'Bag End', '111', 'Middle 
 
 
 *TODO* update Bilbo Baggins record so that the postal code changes to "11122".
-- Note: To update, syntax:
+- Note: To *UPDATE*, syntax:
      UPDATE tableName 
      SET column1 = value1, column2 = value2
      WHERE (condition for which record is being updated)
@@ -70,3 +70,27 @@ WHERE CustomerID = 95
 SELECT *
 FROM Customers
 WHERE CustomerID > 90
+
+
+*TODO* Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted. Should be 69.
+- Note: *To quantify a group of records - use COUNT*
+     - If you want to know the distinct count of records - use (DISTINCT column-name)
+SELECT COUNT (DISTINCT City)
+FROM Customers
+
+*TODO* Find all suppliers who have names longer than 20 characters. Returns 11 records.
+- Note: *You don't put strings around numbers*
+     - You can find the length of a record by using *LENGTH()*
+SELECT * 
+FROM Suppliers
+WHERE LENGTH(SupplierName) > 20 
+
+
+*TODO* DELETE!!
+DELETE FROM Customers 
+
+DELETE Product
+WHERE Condition 
+
+DELETE Customer 
+WHERE Id = 21
