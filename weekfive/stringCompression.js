@@ -49,7 +49,7 @@
 
 // * Trial 4 - MAKES SENSE!!
 var compress = function(chars) {
-    // .splice() removes the items and returns the removed items
+    // .splice() affects the original array - returns the items taken out 
     // .slice() doesn't remove the array, but returns selected items in a NEW ARRAY
     let startingIndex = 0
     let length = 1
