@@ -20,17 +20,20 @@ function reverse_list(head){
 }
 
 
-// def reverse_list(self):
-//     # TO BE COMPLETED
-//     # if self.head.next_node is None:
-//     #   return self.head 
-//     previous = None
-//     current = self.head
+// traverse a linked list - poppulate array from LL
+// [5,3,10]
+function traverse(head){
+     if(head.next === null){
+          return head 
+     }
 
-//     while current != None:
-//         new = current.next_node 
-//         current.next_node = previous 
-//         previous = current 
-//         current = new
-
-//     self.head = previous
+     let arr = []
+     let current = head 
+     while(current.next !== null){
+          arr.push(current.val)
+          current = current.next
+     }
+     
+     console.log(arr)
+     //[5,3,10]
+}
