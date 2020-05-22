@@ -3,6 +3,13 @@
 
 // The input arrayOfInts will always have at least three integers.
 
+// TODO - explanation breakdown
+// TODO - because any 3 integers in the array could be a part of the product, we need to look at each element
+// How can we keep track of highestProductOf3 "so far" as we walk across array?
+
+// TODO - keep track of *highestProductOf2* and *lowestproductof2* (could be negative number)
+// to keep track of highest/lowest product - we need to keep track of highest or lowest number 
+
 //TODO - method 2 - keeping track of:
      // TODO - highestProductof3, highestProductof2, highest, lowestProductOf2, lowest 
 var maximumProduct = function(nums) {
