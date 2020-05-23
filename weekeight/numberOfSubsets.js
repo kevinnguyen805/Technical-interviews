@@ -20,7 +20,7 @@
 // Explanation: 31 (2^5 - 1) - 4 ([7], [5, 7], [4, 5, 7], [4, 7]) = 27
 // Expected O(n^2) time solution or better.
 
-# https://leetcode.com/discuss/interview-question/268604/Google-interview-Number-of-subsets
+//https://leetcode.com/discuss/interview-question/268604/Google-interview-Number-of-subsets
 
 
 // TODO - THIS IS IN PYTHON - REWRITE TO JS
